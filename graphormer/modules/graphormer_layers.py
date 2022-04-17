@@ -24,6 +24,7 @@ def init_params(module, n_layers):
 class GraphNodeFeature(nn.Module):
     """
     Compute node features for each node in the graph.
+    对点特征的操作，增加一个中心度量，还没有进行qkv计算
     """
 
     def __init__(
