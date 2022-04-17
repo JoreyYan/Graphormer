@@ -63,9 +63,10 @@ class GraphNodeFeature(nn.Module):
             + self.in_degree_encoder(in_degree)
             + self.out_degree_encoder(out_degree)
         )
-
+        
+        # 在0维的地方，多增加一个维度，将第一个维度乘以n_graph， 第二、三个维度乘以1
         graph_token_feature = self.graph_token.weight.unsqueeze(0).repeat(n_graph, 1, 1)
-
+        #
         graph_node_feature = torch.cat([graph_token_feature, node_feature], dim=1)
 
         return graph_node_feature
