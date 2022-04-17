@@ -75,6 +75,8 @@ class GraphNodeFeature(nn.Module):
 class GraphAttnBias(nn.Module):
     """
     Compute attention bias for each head.
+    这个是已经有了 attention之后，分别计算特殊的bias的 
+     spatial_pos_bias 是空间的bias
     """
 
     def __init__(
